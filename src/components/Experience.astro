@@ -1,0 +1,29 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    title: "Ingeniero de Software Jr.",
+    company: "CECEQ",
+    description:
+      "Desarrollo aplicaciones web para la institucion, con el fin de mejorar la calidad de los servicios que se ofrecen a los usuarios. Implementación de un sistema de inscripcion a diversos talleres, mejorando el proceso de inscripcion en un 50%.",
+  },
+  {
+    date: "Enero 2023",
+    title: "Frontend Developer",
+    company: "Pamet",
+    description:
+      "Desarrollo de aplicaciones web y moviles para la empresa, con el fin de mejorar los servicios que se ofrecen a los usuarios. Implementación de un sistema de gestion de recursos humanos con el fin de minimizar el error humano en la gestion de los empleados.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
