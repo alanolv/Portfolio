@@ -1,0 +1,107 @@
+---
+import Home from "../components/icons/HomeDark.astro";
+
+const navItems = [
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
+  },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos",
+  },
+  {
+    title: "Sobre mí",
+    label: "sobre mí",
+    url: "/#sobre-mi",
+  },
+  {
+    title: "Contacto",
+    label: "contacto",
+    url: "mailto:olvera.cristino.alan@gmail.com",
+  },
+];
+---
+
+<header>
+  <nav id="header-nav">
+    <a id="home-icon-wrapper" href="/#content-presentation">
+        <Home id="home-icon" />
+      </a>
+    <div id="nav-links">
+      {
+        navItems.map((item,index) => (
+          <a href={item.url} aria-label={item.label} class={`link-${index}`}>
+            {item.title}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+<style>
+  header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+  }
+  #header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+    #home-icon-wrapper {
+        display: flex;
+        align-items: center;
+    }
+    #home-icon-wrapper:hover {
+        cursor: pointer;
+    }
+    #nav-links a{
+        position: relative;
+        font-size: 16px;
+        align-items: center;
+        margin: 0 1rem;
+        text-decoration: none;
+        color: white;
+    }
+    #nav-links a:hover{
+        color: #f0f0f0;
+    }
+    #nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  .link-0::after {
+    background-color:#999a4f;
+  }
+  .link-1::after {
+    background-color:#a85772;
+  }
+  .link-2::after {
+    background-color:#2b648a;
+  }
+  .link-3::after {
+    background-color:#7fa37e;
+  }
+  #nav-links a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+</style>
