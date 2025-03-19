@@ -10,6 +10,6 @@
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.1.0",
-    "astro": "^5.1.1"
+    "astro": "^5.5.3"
   }
 }
