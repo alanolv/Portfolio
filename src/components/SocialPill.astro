@@ -1,0 +1,47 @@
+<a
+  {...Astro.props}
+  target="_blank"
+  rel="noopener noreferrer"
+  role="link"
+  class="social-pill"
+>
+  <slot />
+</a>
+
+<style>
+  .social-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Espaciado entre elementos */
+    padding: 0.25rem 1rem; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de texto */
+    color: #1f2937; /* Texto gris oscuro */
+    background-color: #f3f4f6; /* Fondo gris claro */
+    border: 1px solid #d1d5db; /* Borde gris */
+    border-radius: 9999px; /* Borde redondeado completo */
+    transition: all 0.2s ease-in-out; /* Transición suave */
+    text-decoration: none; /* Sin subrayado */
+  }
+
+  .social-pill:hover {
+    background-color: #111827; /* Fondo gris oscuro al pasar el mouse */
+    border-color: #374151; /* Borde gris más oscuro */
+    color: #ffffff; /* Texto blanco */
+  }
+
+  /* Modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    .social-pill {
+      background-color: #1f2937; /* Fondo gris oscuro */
+      border-color: #4b5563; /* Borde gris oscuro */
+      color: #ffffff; /* Texto blanco */
+    }
+
+    .social-pill:hover {
+      background-color: #f3f4f6; /* Fondo gris claro */
+      border-color: #d1d5db; /* Borde gris claro */
+      color: #000000; /* Texto negro */
+    }
+  }
+</style>

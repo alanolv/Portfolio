@@ -1,0 +1,48 @@
+<a
+  {...Astro.props}
+  target="_blank"
+  rel="noopener noreferrer"
+  role="link"
+  class="badge-se"
+>
+  <slot/>
+</a>
+
+<style>
+  .badge-se {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.25rem 1rem;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 9999px; /* Borde redondeado */
+    z-index: 1; /* Asegura que el contenido esté encima del pseudo-elemento */
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    
+  }
+
+  .badge-se::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 9999px; /* Borde redondeado */
+    background: linear-gradient(45deg, #999a4f, #7fa37e, #a85772, #2b648a); /* Degradado */
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+    
+  }
+
+
+
+
+  
+
+
+</style>

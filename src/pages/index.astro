@@ -1,8 +1,55 @@
 ---
-import Hero from '../components/Hero.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+
+//import AboutMe from "@/components/AboutMe.astro"
+//import Briefcase from "@/components/icons/Briefcase.astro"
+//import CodeIcon from "@/components/icons/Code.astro"
+//import Experience from "@/components/Experience.astro"
+//import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+//import Projects from "@/components/Projects.astro"
+import SectionContainer from "../components/SectionContainer.astro";
+import Hero from "../components/Hero.astro";
+//import TitleSection from "@/components/TitleSection.astro"
 ---
 
-<Layout title='Portfolio - Alan Olvera Software Engineer' description='Mi portfolio personal' >
-	<Hero/>
+<Layout
+  title="Potfolio de Alan Olvera"
+  description="Conoce mi experiencia laboral, proyectos y más sobre mí."
+>
+  <main>
+    <SectionContainer>
+      <Hero />
+    </SectionContainer>
+  
+  <!-- 
+  <div>
+    
+		<SectionContainer id="experiencia">
+      <TitleSection>
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </TitleSection>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <TitleSection>
+        <CodeIcon class="size-7" />
+        Proyectos
+      </TitleSection>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <TitleSection>
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </TitleSection>
+      <AboutMe />
+    </SectionContainer>
+  </div>
+  
+  </div>
+  -->
+</main>
 </Layout>

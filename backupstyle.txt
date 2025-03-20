@@ -124,3 +124,95 @@ const navItems = [
     }
   }
 </style>
+
+
+
+
+
+
+ background-color: #050505;
+
+
+
+
+
+
+
+
+
+
+
+ ---
+import ShinyButton from "./ShinyButton.astro";
+---
+
+<section id="container">
+  <div id="content-presentation">
+    <ShinyButton />
+    <h1>Alan Olvera</h1>
+    <p>
+      <strong>Ingeniero de Software de México</strong> con +1 año de experiencia en desarrollo de soluciones de software.
+    </p>
+  </div>
+</section>
+
+<style>
+  #background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: aqua;
+  }
+
+  #container {
+    height: 100%;
+  }
+
+  #content-presentation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -30%);
+    text-align: start;
+    color: #FFFF;
+  }
+  #content-presentation h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 0.78rem;
+    margin-bottom: 0.58rem;
+  }
+  @media (min-width: 768px) {
+    #content-presentation h1 {
+      font-size: 4.5rem;
+    }
+  }
+
+  #content-presentation p {
+    color: #b9b9b9;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 0;
+  }
+
+  @media screen and (max-height: 368px) {
+    #news {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #container {
+      display: flex;
+      flex-direction: column;
+    }
+    #content-presentation {
+      transform: translate(-50%, -50%);
+    
+    }
+  }
+</style>
+
