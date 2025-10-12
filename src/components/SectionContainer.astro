@@ -11,12 +11,14 @@ const { class: className, id } = Astro.props;
   .section {
     width: 100%;
     height: 100vh;
-  
+    padding-left: 1rem;
+    padding-right: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    scroll-margin-top: 80px;
   }
 
   .section-transition {
@@ -40,7 +42,7 @@ const { class: className, id } = Astro.props;
     position: absolute;
     width: 100vw;
     height: 100vw;
-    background-image: url("/images/20250810_1818_Colorful Wave Wires_remix_01k2b7s3vnfdd87dd1wb8j4mzj.png");
+    background-image: url("/images/fondo.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

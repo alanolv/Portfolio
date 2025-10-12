@@ -10,7 +10,7 @@ import Layout from "../layouts/Layout.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Hero from "../components/Hero.astro";
 import Experience from "../components/Experience.astro";
-import Projects from "../components/projects.astro";
+import Projects from "../components/Projects.astro";
 import AboutMe from "../components/AboutMe.astro";
 //import TitleSection from "@/components/TitleSection.astro"
 ---
@@ -20,19 +20,19 @@ import AboutMe from "../components/AboutMe.astro";
   description="Conoce mi experiencia laboral, proyectos y más sobre mí."
 >
   <main>
-    <SectionContainer>
+    <SectionContainer id="hero">
       <Hero />
     </SectionContainer>
 
-    <section class="experience-section">
+    <section id="experiencia" class="experience-section">
       <Experience />
     </section>
 
-    <section class="projects-section">
+    <section id="proyectos" class="projects-section">
       <Projects />
     </section>
 
-    <section class="about-section">
+    <section id="sobre-mi" class="about-section">
       <AboutMe />
     </section>
   </main>
@@ -40,7 +40,7 @@ import AboutMe from "../components/AboutMe.astro";
 
 <style>
   .experience-section {
- 
+  
     background: linear-gradient(to bottom, #141414 0%, #131313 100%);
     display: flex;
     align-items: center;
@@ -48,6 +48,7 @@ import AboutMe from "../components/AboutMe.astro";
     padding: 1rem 0;
     overflow: hidden;
     position: relative;
+    scroll-margin-top: 80px;
   }
 
   .experience-section::before {
@@ -96,6 +97,7 @@ import AboutMe from "../components/AboutMe.astro";
     padding: 1rem 0;
     overflow: hidden;
     position: relative;
+    scroll-margin-top: 80px;
   }
 
   .projects-section::after {
@@ -128,5 +130,6 @@ import AboutMe from "../components/AboutMe.astro";
     justify-content: center;
     padding: 2rem 0;
     position: relative;
+    scroll-margin-top: 80px;
   }
 </style>
