@@ -2,37 +2,185 @@
 const { class: className, id } = Astro.props;
 ---
 
-<section
-  id={id}
-  data-section={id}
-  class={`section ${className}`}
-  
->
+<section id={id} data-section={id} class={`section ${className}`}>
   <slot />
+  <div class="section-transition"></div>
 </section>
 
 <style>
   .section {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100vh;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-transition {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(20, 20, 20, 0.8) 70%,
+      #141414 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .section::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+    background-image: url("/images/20250810_1818_Colorful Wave Wires_remix_01k2b7s3vnfdd87dd1wb8j4mzj.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(-90deg);
+    z-index: -2;
+    opacity: 0.6;
+    filter: blur(1px);
+    mask: radial-gradient(
+      ellipse 70% 80% at center,
+      black 30%,
+      transparent 70%
+    );
+    -webkit-mask: radial-gradient(
+      ellipse 70% 80% at center,
+      black 30%,
+      transparent 70%
+    );
+  }
+
+  .section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    padding-top: 15rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    background-image: radial-gradient(
+        circle at 20% 80%,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 40% 40%,
+        rgba(255, 255, 255, 0.02) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 60% 60%,
+        rgba(255, 255, 255, 0.02) 1px,
+        transparent 1px
+      );
+    background-size:
+      50px 50px,
+      30px 30px,
+      20px 20px,
+      40px 40px;
+    background-position:
+      0 0,
+      10px 10px,
+      20px 20px,
+      30px 30px;
+    opacity: 0.6;
+    z-index: -1;
+    animation: grain 8s steps(10) infinite;
+  }
+
+  .section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+        circle at 20% 80%,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 40% 40%,
+        rgba(255, 255, 255, 0.02) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 60% 60%,
+        rgba(255, 255, 255, 0.02) 1px,
+        transparent 1px
+      );
+    background-size:
+      50px 50px,
+      30px 30px,
+      20px 20px,
+      40px 40px;
+    background-position:
+      0 0,
+      10px 10px,
+      20px 20px,
+      30px 30px;
+    opacity: 0.6;
+    z-index: -1;
+    animation: grain 8s steps(10) infinite;
+  }
+
+  @keyframes grain {
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    10% {
+      transform: translate(-1px, 1px) rotate(1deg);
+    }
+    20% {
+      transform: translate(1px, -1px) rotate(-1deg);
+    }
+    30% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+    40% {
+      transform: translate(1px, 1px) rotate(-1deg);
+    }
+    50% {
+      transform: translate(-1px, 1px) rotate(1deg);
+    }
+    60% {
+      transform: translate(1px, -1px) rotate(-1deg);
+    }
+    70% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+    80% {
+      transform: translate(1px, 1px) rotate(-1deg);
+    }
+    90% {
+      transform: translate(-1px, 1px) rotate(1deg);
+    }
   }
 
   @media (max-width: 768px) {
     .section {
-      max-width: 42rem;
-      padding-top: 8rem;
-
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .section {
-      max-width: 64rem;
+      height: 100vh;
     }
   }
 </style>

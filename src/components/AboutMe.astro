@@ -1,0 +1,423 @@
+---
+---
+
+<div class="about-container">
+  <div class="about-content">
+    <div class="about-text">
+      <h2 class="about-title">Sobre mí</h2>
+      <div class="about-description">
+        <p>
+          Soy un <strong class="highlight">Ingeniero de Software</strong> apasionado por crear soluciones 
+          tecnológicas que marquen la diferencia. Mi enfoque se centra en desarrollar aplicaciones 
+          web modernas, eficientes y centradas en el usuario.
+        </p>
+        <p>
+          Me caracterizo por mi <strong class="highlight">curiosidad constante</strong> y mi capacidad 
+          para adaptarme rápidamente a nuevos desafíos. Disfruto colaborando en equipos 
+          multidisciplinarios y contribuyendo a proyectos que generen un impacto positivo.
+        </p>
+      </div>
+      
+      <div class="skills-section">
+        <h3 class="skills-title">Tecnologías y Herramientas</h3>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>Frontend</h4>
+            <div class="skill-tags">
+              <span class="skill-tag frontend">React</span>
+              <span class="skill-tag frontend">Next.js</span>
+              <span class="skill-tag frontend">Vue.js</span>
+              <span class="skill-tag frontend">Astro</span>
+              <span class="skill-tag frontend">TypeScript</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Backend</h4>
+            <div class="skill-tags">
+              <span class="skill-tag backend">Node.js</span>
+              <span class="skill-tag backend">Express</span>
+              <span class="skill-tag backend">MongoDB</span>
+              <span class="skill-tag backend">PostgreSQL</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Herramientas</h4>
+            <div class="skill-tags">
+              <span class="skill-tag tools">Git</span>
+              <span class="skill-tag tools">Docker</span>
+              <span class="skill-tag tools">VS Code</span>
+              <span class="skill-tag tools">Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="about-visual">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="profile-avatar">
+            <div class="avatar-placeholder">AO</div>
+          </div>
+          <div class="profile-info">
+            <h3>Alan Olvera</h3>
+            <p>Software Engineer</p>
+            <div class="profile-stats">
+              <div class="stat">
+                <span class="stat-number">1+</span>
+                <span class="stat-label">Años</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Proyectos</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Tecnologías</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="interests">
+          <h4>Intereses</h4>
+          <div class="interest-tags">
+            <span class="interest-tag">🚀 Innovación</span>
+            <span class="interest-tag">🎮 Gaming</span>
+            <span class="interest-tag">📚 Aprendizaje</span>
+            <span class="interest-tag">🎵 Música</span>
+            <span class="interest-tag">⚡ Tecnología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+    width: 100%;
+    align-items: start;
+    height: fit-content;
+  }
+
+  .about-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #7fa37e, #a85772);
+  }
+
+  .about-description p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .highlight {
+    background: linear-gradient(45deg, #7fa37e, #a85772);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+  }
+
+  .skills-section {
+    margin-top: 1.5rem;
+  }
+
+  .skills-title {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .skill-category h4 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .skill-tag {
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+  }
+
+  .skill-tag:hover {
+    transform: translateY(-2px);
+  }
+
+  .skill-tag.frontend {
+    background: rgba(127, 163, 126, 0.2);
+    color: #7fa37e;
+    border: 1px solid rgba(127, 163, 126, 0.3);
+  }
+
+  .skill-tag.backend {
+    background: rgba(168, 87, 114, 0.2);
+    color: #a85772;
+    border: 1px solid rgba(168, 87, 114, 0.3);
+  }
+
+  .skill-tag.tools {
+    background: rgba(43, 100, 138, 0.2);
+    color: #2b648a;
+    border: 1px solid rgba(43, 100, 138, 0.3);
+  }
+
+  .profile-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    height: fit-content;
+  }
+
+  .profile-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-avatar {
+    margin-bottom: 0.75rem;
+  }
+
+  .avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7fa37e, #a85772);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    margin: 0 auto;
+  }
+
+  .profile-info h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .profile-info p {
+    color: #cccccc;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .profile-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #7fa37e;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: #999;
+  }
+
+  .interests h4 {
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .interest-tag {
+    background: rgba(153, 154, 79, 0.2);
+    color: #999a4f;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(153, 154, 79, 0.3);
+    transition: transform 0.2s ease;
+  }
+
+  .interest-tag:hover {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 1024px) {
+    .about-content {
+      grid-template-columns: 1fr 300px;
+      gap: 1.5rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      text-align: center;
+      height: fit-content;
+    }
+
+    .about-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-description p {
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .skills-section {
+      margin-top: 1rem;
+    }
+
+    .skills-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .profile-card {
+      padding: 1.25rem;
+      order: -1;
+    }
+
+    .profile-header {
+      margin-bottom: 1rem;
+    }
+
+    .interests h4 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-container {
+      padding: 0.75rem;
+    }
+
+    .about-container {
+      padding: 1.5rem 0.75rem;
+    }
+
+    .about-content {
+      height: fit-content;
+    }
+
+    .about-title {
+      font-size: 1.6rem;
+    }
+
+    .about-description p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .skills-title {
+      font-size: 1.1rem;
+    }
+
+    .skill-category h4 {
+      font-size: 0.9rem;
+    }
+
+    .skill-tag {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+    }
+
+    .profile-card {
+      padding: 1rem;
+    }
+
+    .avatar-placeholder {
+      width: 50px;
+      height: 50px;
+      font-size: 1rem;
+    }
+
+    .profile-info h3 {
+      font-size: 1rem;
+    }
+
+    .stat-number {
+      font-size: 1rem;
+    }
+
+    .interest-tag {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+    }
+
+    .skill-tags,
+    .interest-tags {
+      justify-content: center;
+    }
+  }
+</style>

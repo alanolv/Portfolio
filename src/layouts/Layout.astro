@@ -1,15 +1,14 @@
 ---
 import "@fontsource/ibm-plex-mono";
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
-const { description, title } = Astro.props
+const { description, title } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,13 +22,13 @@ const { description, title } = Astro.props
     <title>{title}</title>
   </head>
 
-  <body >
+  <body>
     <Header />
     <slot />
     <Footer />
 
     <style is:global>
-       :root {
+      :root {
         color-scheme: light dark;
       }
       #background {
@@ -39,7 +38,7 @@ const { description, title } = Astro.props
         width: 100%;
         height: 100%;
         z-index: -1;
-        background-color: #050505;
+        background-color: #0a0a0a;
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -48,6 +47,7 @@ const { description, title } = Astro.props
       html {
         font-family: "IBM Plex Mono", monospace, system-ui, sans-serif;
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
 
       body {
@@ -55,6 +55,13 @@ const { description, title } = Astro.props
         flex-direction: column;
         min-height: 100vh;
         overscroll-behavior: none;
+        scrollbar-width: none;
+        overflow-x: hidden;
+        margin: 0px;
+      }
+
+      main {
+        flex: 1;
       }
     </style>
   </body>

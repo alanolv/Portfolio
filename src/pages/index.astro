@@ -9,6 +9,9 @@ import Layout from "../layouts/Layout.astro";
 //import Projects from "@/components/Projects.astro"
 import SectionContainer from "../components/SectionContainer.astro";
 import Hero from "../components/Hero.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
 //import TitleSection from "@/components/TitleSection.astro"
 ---
 
@@ -20,36 +23,110 @@ import Hero from "../components/Hero.astro";
     <SectionContainer>
       <Hero />
     </SectionContainer>
-  
-  <!-- 
-  <div>
-    
-		<SectionContainer id="experiencia">
-      <TitleSection>
-        <Briefcase class="size-8" />
-        Experiencia laboral
-      </TitleSection>
+
+    <section class="experience-section">
       <Experience />
-    </SectionContainer>
+    </section>
 
-    <SectionContainer id="proyectos">
-      <TitleSection>
-        <CodeIcon class="size-7" />
-        Proyectos
-      </TitleSection>
+    <section class="projects-section">
       <Projects />
-    </SectionContainer>
+    </section>
 
-    <SectionContainer id="sobre-mi">
-      <TitleSection>
-        <ProfileCheck class="size-8" />
-        Sobre mí
-      </TitleSection>
+    <section class="about-section">
       <AboutMe />
-    </SectionContainer>
-  </div>
-  
-  </div>
-  -->
-</main>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  .experience-section {
+ 
+    background: linear-gradient(to bottom, #141414 0%, #131313 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .experience-section::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 20, 20, 0.6) 0%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .experience-section::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+      to top,
+      rgba(19, 19, 19, 0.6) 0%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .experience-section > :global(*) {
+    position: relative;
+    z-index: 2;
+  }
+
+  .projects-section {
+    height: 100vh;
+    background: linear-gradient(to bottom, #131313 0%, #121212 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .projects-section::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+      to top,
+      rgba(18, 18, 18, 0.6) 0%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .projects-section > :global(*),
+  .about-section > :global(*) {
+    position: relative;
+    z-index: 2;
+  }
+
+  .about-section {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #121212 0%, #111111 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    position: relative;
+  }
+</style>

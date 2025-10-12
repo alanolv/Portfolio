@@ -1,71 +1,124 @@
 ---
-const personalImageAlt = "Miguel Ángel";
 import BadgeSE from "./BadgeSE.astro";
 import LinkedInIcon from "../components/icons/Linkedin.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import SocialPill from "./SocialPill.astro";
 ---
 
-<div class="max-w-xl">
-  <div class="flex gap-4 mb-4">
-    <a
-      href="https://linkedin.com/in/midudev"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
-    >
+<div class="hero-container">
+  <div class="hero-content">
+    <div class="badge-container">
       <BadgeSE>Ingeniero de Software</BadgeSE>
-    </a>
+    </div>
+    <h1 class="hero-name">Alan Olvera</h1>
+    <p class="hero-description">
+      <strong class="hero-strong">Ingeniero de Software Mexicano</strong> con más de 1 año
+      de experiencia en desarrollo de soluciones de software. Me especializo en crear 
+      aplicaciones web modernas y eficientes, con un enfoque en la experiencia del usuario 
+      y las mejores prácticas de desarrollo.
+    </p>
+    <nav class="hero-nav">
+      <SocialPill href="mailto:olvera.cristino.alan@gmail.com">
+        <MailIcon class="" />
+        Contáctame
+      </SocialPill>
+      <SocialPill href="https://www.linkedin.com/in/alan-olvera-cristino/">
+        <LinkedInIcon class="" />
+        LinkedIn
+      </SocialPill>
+    </nav>
   </div>
-  <h1 class="hero-name">Alan Olvera</h1>
-  <p class="hero-description">
-    <strong class="hero-strong">Ingeniero de Software de México</strong> con +1 año
-    de experiencia en desarrollo de soluciones de software.
-  </p>
-  <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:olvera.cristino.alan@gmail.com">
-      <MailIcon class="size-4" />
-      Contáctame
-    </SocialPill>
-    <SocialPill href="https://www.linkedin.com/in/alan-olvera-cristino/">
-      <LinkedInIcon class="size-4" />
-      LinkedIn
-    </SocialPill>
-  </nav>
 </div>
 
 <style>
-  .hero-name {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: 0.78rem;
-    color: #ffff;
-    margin-bottom: 10px;
-  }
-  .hero-description {
-    margin-top: 0px;
-    font-size: 1.25rem;
-    color: #dddddd;
-  }
-  .hero-strong {
-    animation: colorChange 6s infinite;
+  .hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 2rem;
   }
 
-  @keyframes colorChange {
-    0% {
-      color: #7fa37e; 
+  .hero-content {
+    max-width: 700px;
+    width: 100%;
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .badge-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    position: relative;
+  }
+
+  .hero-name::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #7fa37e, #a85772);
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    color: #dddddd;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero-strong {
+    background: linear-gradient(45deg, #7fa37e, #a85772);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+  }
+
+  .hero-nav {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+
+
+  @media (max-width: 768px) {
+    .hero-container {
+      padding: 0 1rem;
     }
-    25% {
-      color: #999a4f;
+    
+    .hero-name {
+      font-size: 2.5rem;
     }
-    50% {
-      color: #a85772; 
+    
+    .hero-description {
+      font-size: 1.1rem;
     }
-    75% {
-      color: #2b648a; 
+    
+    .hero-nav {
+      flex-direction: column;
+      gap: 0.75rem;
     }
-    100% {
-      color: #7fa37e; 
+  }
+
+  @media (max-width: 480px) {
+    .hero-name {
+      font-size: 2rem;
+    }
+    
+    .hero-content {
+      padding: 0 0.5rem;
     }
   }
 </style>

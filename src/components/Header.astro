@@ -1,43 +1,17 @@
 ---
 import Home from "../components/icons/HomeDark.astro";
-
-const navItems = [
-  {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
-  },
-  {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
-  },
-  {
-    title: "Sobre mí",
-    label: "sobre mí",
-    url: "/#sobre-mi",
-  },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:olvera.cristino.alan@gmail.com",
-  },
-];
 ---
 
 <header>
   <nav id="header-nav">
     <a id="home-icon-wrapper" href="/#content-presentation">
-        <Home id="home-icon" />
-      </a>
+      <Home id="home-icon" />
+    </a>
     <div id="nav-links">
-      {
-        navItems.map((item,index) => (
-          <a href={item.url} aria-label={item.label} class={`link-${index}`}>
-            {item.title}
-          </a>
-        ))
-      }
+      <a href="/#experiencia" aria-label="experiencia" class="link-0"> Experiencia </a>
+      <a href="/#proyectos" aria-label="proyectos" class="link-1"> Proyectos </a>
+      <a href="/#sobre-mi" aria-label="sobre mí" class="link-2"> Sobre mí </a>
+      <a href="mailto:olvera.cristino.alan@gmail.com" aria-label="contacto" class="link-3"> Contacto </a>
     </div>
   </nav>
 </header>
@@ -54,58 +28,58 @@ const navItems = [
   #header-nav {
     display: flex;
     justify-content: space-between;
-    align-items:center ;
+    align-items: center;
     width: 100%;
     padding: 1rem 2rem;
   }
-    #home-icon-wrapper {
-        display: flex;
-        align-items: center;
-    }
-    #home-icon-wrapper:hover {
-        cursor: pointer;
-    }
-    #nav-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #nav-links a{
-        position: relative;
-        font-size: 16px;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 0 1rem;
-        text-decoration: none;
-        color: white;
-    }
-    #nav-links a:hover{
-        color: #f0f0f0;
-    }
-    #nav-links a::after {
-    content: '';
+  #home-icon-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  #home-icon-wrapper:hover {
+    cursor: pointer;
+  }
+  #nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #nav-links a {
+    position: relative;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 1rem;
+    text-decoration: none;
+    color: white;
+  }
+  #nav-links a:hover {
+    color: #f0f0f0;
+  }
+  #nav-links a::after {
+    content: "";
     position: absolute;
     width: 100%;
     height: 2px;
     bottom: -2px;
     left: 0;
-    
+
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
   }
   .link-0::after {
-    background-color:#999a4f;
+    background-color: #999a4f;
   }
   .link-1::after {
-    background-color:#a85772;
+    background-color: #a85772;
   }
   .link-2::after {
-    background-color:#2b648a;
+    background-color: #2b648a;
   }
   .link-3::after {
-    background-color:#7fa37e;
+    background-color: #7fa37e;
   }
   #nav-links a:hover::after {
     visibility: visible;
